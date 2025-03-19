@@ -1,4 +1,3 @@
-"use client"
 
 import { motion } from "framer-motion"
 
@@ -14,7 +13,7 @@ const ProjectCard = ({ project }) => {
     >
       <div className="h-48 overflow-hidden">
         <img
-          src={project.image || "/placeholder.svg"}
+          src={`${project.image || "/placeholder.svg"}?height=320&width=320`}
           alt={project.title}
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
         />
@@ -39,4 +38,3 @@ const ProjectCard = ({ project }) => {
 }
 
 export default ProjectCard
-

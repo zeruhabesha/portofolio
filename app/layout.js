@@ -1,23 +1,19 @@
-import type React from "react"
-import { Inter } from "next/font/google"
+import { Inter } from "next/font/google";
 // import "../styles/globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
-})
+});
 
 export const metadata = {
   title: "Zerihun Kibret | Full-Stack Developer",
-  description: "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design",
-}
+  description:
+    "Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -35,11 +31,15 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
-

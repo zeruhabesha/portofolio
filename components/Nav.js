@@ -1,26 +1,25 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { FaBars, FaTimes } from "react-icons/fa"
+"use client"; // This marks the file as a client component
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setScrolled(true)
+        setScrolled(true);
       } else {
-        setScrolled(false)
+        setScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -28,21 +27,25 @@ const Nav = () => {
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
-  ]
+  ];
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  }
+  };
 
   const mobileMenuVariants = {
     closed: { opacity: 0, x: "100%" },
     open: { opacity: 1, x: 0, transition: { duration: 0.3 } },
-  }
+  };
 
   return (
     <motion.nav
-      className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/90 backdrop-blur-md py-3 shadow-lg" : "bg-transparent py-5"}`}
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-gray-900/90 backdrop-blur-md py-3 shadow-lg"
+          : "bg-transparent py-5"
+      }`}
       initial="hidden"
       animate="visible"
       variants={navVariants}
@@ -62,7 +65,9 @@ const Nav = () => {
           {navLinks.map((link, index) => (
             <motion.div key={index} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
               <Link href={link.href}>
-                <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">{link.name}</span>
+                <span className="text-gray-300 hover:text-white transition-colors cursor-pointer">
+                  {link.name}
+                </span>
               </Link>
             </motion.div>
           ))}
@@ -107,8 +112,7 @@ const Nav = () => {
         </div>
       </motion.div>
     </motion.nav>
-  )
-}
+  );
+};
 
-export default Nav
-
+module.exports = Nav;

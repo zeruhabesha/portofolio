@@ -1,3 +1,4 @@
+// pages/_document.js
 import Document, { Html, Head, Main, NextScript } from "next/document"
 
 class MyDocument extends Document {
@@ -21,6 +22,9 @@ class MyDocument extends Document {
             content="Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
           />
           <meta property="og:type" content="website" />
+          <meta charSet="utf-8" />
+          <meta name="robots" content="index, follow" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         </Head>
         <body>
           <Main />
@@ -32,4 +36,3 @@ class MyDocument extends Document {
 }
 
 export default MyDocument
-

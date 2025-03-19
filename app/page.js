@@ -1,14 +1,12 @@
-"use client"
-
-import { useState, useEffect } from "react"
-import Head from "next/head"
-import { motion } from "framer-motion"
-import Nav from "../components/Nav"
-import Footer from "../components/Footer"
-import ProjectCard from "../components/ProjectCard"
-import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa"
-import {
-  SiMaterialui,
+const React = require('react');
+const { useState, useEffect } = require('react');
+const { motion } = require('framer-motion');
+const Nav = require('../components/Nav');
+const Footer = require('../components/Footer');
+const ProjectCard = require('../components/ProjectCard');
+const { FaGithub, FaLinkedin, FaEnvelope, FaPhone } = require('react-icons/fa');
+const {
+  SiMui,
   SiReact,
   SiNodedotjs,
   SiMongodb,
@@ -18,57 +16,57 @@ import {
   SiFigma,
   SiAdobephotoshop,
   SiAdobeillustrator,
-} from "react-icons/si"
+} = require('react-icons/si');
 
-export default function Home() {
-  const [isLoaded, setIsLoaded] = useState(false)
+function Home() {
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIsLoaded(true)
-  }, [])
+    setIsLoaded(true);
+  }, []);
 
   const projects = [
     {
       id: 1,
-      title: "Property Management System",
-      description: "A comprehensive system for managing properties, tenants, and maintenance requests.",
-      technologies: ["React", "Node.js", "MongoDB", "Express"],
-      image: "/images/property-management.jpg",
+      title: 'Property Management System',
+      description: 'A comprehensive system for managing properties, tenants, and maintenance requests.',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+      image: '/images/property-management.jpg',
     },
     {
       id: 2,
-      title: "Tender Management System",
-      description: "Platform for managing the complete tender lifecycle from announcement to award.",
-      technologies: ["MERN Stack", "Material UI", "Redux"],
-      image: "/images/tender-management.jpg",
+      title: 'Tender Management System',
+      description: 'Platform for managing the complete tender lifecycle from announcement to award.',
+      technologies: ['MERN Stack', 'Material UI', 'Redux'],
+      image: '/images/tender-management.jpg',
     },
     {
       id: 3,
-      title: "Medical Practice Application",
+      title: 'Medical Practice Application',
       description:
-        "Full-stack web application for a medical practice with appointment scheduling and patient management.",
-      technologies: ["React", "Node.js", "MySQL", "Express"],
-      image: "/images/medical-app.jpg",
+        'Full-stack web application for a medical practice with appointment scheduling and patient management.',
+      technologies: ['React', 'Node.js', 'MySQL', 'Express'],
+      image: '/images/medical-app.jpg',
     },
-  ]
+  ];
 
   const skills = [
-    { name: "React", icon: <SiReact className="text-blue-500" size={40} /> },
-    { name: "Node.js", icon: <SiNodedotjs className="text-green-600" size={40} /> },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-500" size={40} /> },
-    { name: "Express", icon: <SiExpress className="text-gray-700" size={40} /> },
-    { name: "PHP", icon: <SiPhp className="text-purple-600" size={40} /> },
-    { name: "MySQL", icon: <SiMysql className="text-blue-800" size={40} /> },
-    { name: "Material UI", icon: <SiMaterialui className="text-blue-600" size={40} /> },
-    { name: "Figma", icon: <SiFigma className="text-purple-500" size={40} /> },
-    { name: "Photoshop", icon: <SiAdobephotoshop className="text-blue-900" size={40} /> },
-    { name: "Illustrator", icon: <SiAdobeillustrator className="text-orange-600" size={40} /> },
-  ]
+    { name: 'React', icon: <SiReact className="text-blue-500" size={40} /> },
+    { name: 'Node.js', icon: <SiNodedotjs className="text-green-600" size={40} /> },
+    { name: 'MongoDB', icon: <SiMongodb className="text-green-500" size={40} /> },
+    { name: 'Express', icon: <SiExpress className="text-gray-700" size={40} /> },
+    { name: 'PHP', icon: <SiPhp className="text-purple-600" size={40} /> },
+    { name: 'MySQL', icon: <SiMysql className="text-blue-800" size={40} /> },
+    { name: 'Material UI', icon: <SiMui className="text-blue-600" size={40} /> },
+    { name: 'Figma', icon: <SiFigma className="text-purple-500" size={40} /> },
+    { name: 'Photoshop', icon: <SiAdobephotoshop className="text-blue-900" size={40} /> },
+    { name: 'Illustrator', icon: <SiAdobeillustrator className="text-orange-600" size={40} /> },
+  ];
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-  }
+  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -78,19 +76,10 @@ export default function Home() {
         staggerChildren: 0.2,
       },
     },
-  }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <Head>
-        <title>Zerihun Kibret | Full-Stack Developer</title>
-        <meta
-          name="description"
-          content="Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <Nav />
 
       <main className="container mx-auto px-4 py-8">
@@ -99,7 +88,7 @@ export default function Home() {
           <motion.div
             className="md:w-1/2 mb-8 md:mb-0"
             initial="hidden"
-            animate={isLoaded ? "visible" : "hidden"}
+            animate={isLoaded ? 'visible' : 'hidden'}
             variants={fadeIn}
           >
             <motion.h1
@@ -165,8 +154,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <motion.section
-          className="py-16"
+        <section className="py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -187,11 +175,10 @@ export default function Home() {
               enables me to deliver cohesive, engaging applications that meet user expectations.
             </p>
           </div>
-        </motion.section>
+        </section>
 
         {/* Skills Section */}
-        <motion.section
-          className="py-16"
+        <section className="py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -216,11 +203,10 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
-        </motion.section>
+        </section>
 
         {/* Projects Section */}
-        <motion.section
-          className="py-16"
+        <section className="py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -232,11 +218,10 @@ export default function Home() {
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
-        </motion.section>
+        </section>
 
         {/* Contact Section */}
-        <motion.section
-          className="py-16"
+        <section className="py-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
@@ -296,11 +281,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </motion.section>
+        </section>
       </main>
 
       <Footer />
     </div>
-  )
+  );
 }
 
+module.exports = Home;
