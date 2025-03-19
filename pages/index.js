@@ -1,13 +1,14 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Head from "next/head"
 import { motion } from "framer-motion"
 import Nav from "../components/Nav"
 import Footer from "../components/Footer"
 import ProjectCard from "../components/ProjectCard"
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa"
 import {
-  SiMui,
+  SiMaterialui,
   SiReact,
   SiNodedotjs,
   SiMongodb,
@@ -58,7 +59,7 @@ export default function Home() {
     { name: "Express", icon: <SiExpress className="text-gray-700" size={40} /> },
     { name: "PHP", icon: <SiPhp className="text-purple-600" size={40} /> },
     { name: "MySQL", icon: <SiMysql className="text-blue-800" size={40} /> },
-    { name: "Material UI", icon: <SiMui className="text-blue-600" size={40} /> },
+    { name: "Material UI", icon: <SiMaterialui className="text-blue-600" size={40} /> },
     { name: "Figma", icon: <SiFigma className="text-purple-500" size={40} /> },
     { name: "Photoshop", icon: <SiAdobephotoshop className="text-blue-900" size={40} /> },
     { name: "Illustrator", icon: <SiAdobeillustrator className="text-orange-600" size={40} /> },
@@ -81,6 +82,15 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <Head>
+        <title>Zerihun Kibret | Full-Stack Developer</title>
+        <meta
+          name="description"
+          content="Full-Stack Developer with expertise in MERN stack, PHP, MySQL, and UI/UX design"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
       <Nav />
 
       <main className="container mx-auto px-4 py-8">
